@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/send"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:inputType="textCapWords"
+        android:layout_centerVertical="true"
+        android:hint="Name"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_below="@id/send"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSubmit"
+        android:textColor="@color/white"
+        android:background="@android:color/transparent"
+        android:text="Start Quiz" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:fontFamily="cursive"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/submit"
+        android:onClick="goToAdmin"/>
+
+</RelativeLayout>
