@@ -60,7 +60,8 @@ public class admin extends AppCompatActivity {
                 if( o1.getText().toString().trim().equals("") || o2.getText().toString().trim().equals("") || o3.getText().toString().trim().equals("") || o4.getText().toString().trim().equals("") || ans.getText().toString().trim().equals(""))
                     Toast.makeText(admin.this, "Fields can't be empty", Toast.LENGTH_SHORT).show();
                 else{
-                    d.insertData(imageViewToByte(img), o1.getText().toString().trim(), o2.getText().toString().trim(), o3.getText().toString().trim(), o4.getText().toString().trim(), ans.getText().toString().trim());
+                    d.insertData(imageViewToByte(img), o1.getText().toString().trim(), o2.getText().toString().trim(),
+                            o3.getText().toString().trim(), o4.getText().toString().trim(), ans.getText().toString().trim());
                     Toast.makeText(getApplicationContext(), "Added Succesfully", Toast.LENGTH_SHORT).show();
                     o1.setText("");
                     o2.setText("");
@@ -117,8 +118,8 @@ public class admin extends AppCompatActivity {
     }
 
     //Converting image in bytes when add is clicked
-    public byte[] imageViewToByte(ImageView img) {
-        Bitmap bitmap = ((BitmapDrawable) img.getDrawable()).getBitmap();
+    public static byte[] imageViewToByte(ImageView img) {
+        Bitmap bitmap = ((BitmapDrawable)img.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();

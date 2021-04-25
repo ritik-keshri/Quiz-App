@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteStatement;
 import androidx.annotation.Nullable;
 
 public class DBstorage extends SQLiteOpenHelper {
-    public static final String tableName = "que_table";
 
     public DBstorage(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -16,8 +15,8 @@ public class DBstorage extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db = this.getWritableDatabase();
-        db.execSQL("create table if not exists "+ tableName +"(id primary key autoincrement,Image BLOB,option1 text,option2 text,option3 text,option4 text,answer text)");
+        db = getWritableDatabase();
+        db.execSQL("create table if not exists que_table(Id integer primary key autoincrement,image BLOB,option1 VARCHAR,option2 VARCHAR,option3 VARCHAR,option4 VARCHAR,answer VARCHAR)");
     }
 
     @Override
@@ -26,7 +25,7 @@ public class DBstorage extends SQLiteOpenHelper {
 
     public void insertData(byte[] img, String col2, String col3, String col4, String col5, String col6) {
         SQLiteDatabase db = getWritableDatabase();
-        String sql = "insert into " + tableName + " values(NULL,?,?,?,?,?,?)";
+        String sql = "insert into que_table values(NULL,?,?,?,?,?,?)";
 
         SQLiteStatement statement = db.compileStatement(sql);
         statement.clearBindings();
