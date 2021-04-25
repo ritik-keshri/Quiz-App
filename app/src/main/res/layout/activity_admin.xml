@@ -36,45 +36,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#424242"
+            android:inputType="textCapWords"
             android:hint="Option 1"
             android:layout_margin="10dp"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/opt2"
             android:layout_width="match_parent"
             android:layout_margin="10dp"
             android:background="#424242"
+            android:inputType="textCapWords"
             android:hint="Option 2"
             android:layout_height="wrap_content"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/opt3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#424242"
+            android:inputType="textCapWords"
             android:layout_margin="10dp"
             android:hint="Option 3"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/opt4"
             android:layout_width="match_parent"
             android:layout_margin="10dp"
+            android:inputType="textCapWords"
             android:background="#424242"
             android:hint="Option 4"
             android:layout_height="wrap_content"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/ans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapWords"
             android:background="#424242"
             android:hint="Answer"
             android:layout_margin="10dp"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -85,8 +90,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
         android:text="Add"
-        android:textSize="20dp"
-        android:onClick="add"
+        android:textSize="20sp"
         android:layout_alignParentBottom="true"/>
 
 

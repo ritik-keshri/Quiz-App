@@ -17,7 +17,7 @@ public class login extends AppCompatActivity {
         setTitle("Admin Login");
     }
 
-    String i="rk", p ="123456789";
+    String i="rk", p ="1234";
 
     public void submit(View view) {
         EditText e = (EditText)findViewById(R.id.id);
