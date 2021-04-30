@@ -29,17 +29,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Invalid Name!!!", Toast.LENGTH_LONG).show();
     }
 
-    public void onSubmit2(View view) {
-        EditText e = (EditText) findViewById(R.id.send);
-        String s = e.getText().toString();
-        if (!s.matches("")) {
-            Intent i = new Intent(this, MainActivity2.class);
-            i.putExtra("name", s);
-            startActivity(i);
-        } else
-            Toast.makeText(getApplicationContext(), "Invalid Name!!!", Toast.LENGTH_LONG).show();
-    }
-
     public void goToAdmin(View view) {
         Intent i = new Intent(this,login.class);
         startActivity(i);

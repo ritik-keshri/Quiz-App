@@ -1,33 +1,25 @@
 package com.example.logoquiz;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -36,8 +28,8 @@ public class admin extends AppCompatActivity {
     EditText o1,o2,o3,o4,ans;
     ImageView img;
     Button ins, add;
-    DBstorage d;
-    private final int REQUEST_CODE_GALLERY=999;
+    public static DBstorage d;
+    final int REQUEST_CODE_GALLERY=999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +37,8 @@ public class admin extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
         setTitle("Welcome RK");
         init();
-        d = new DBstorage(this,"quiz.db",null,1);
+
+        d = new DBstorage(this,"quiz.sqlite",null,1);
 
         ins.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,12 +56,12 @@ public class admin extends AppCompatActivity {
                     d.insertData(imageViewToByte(img), o1.getText().toString().trim(), o2.getText().toString().trim(),
                             o3.getText().toString().trim(), o4.getText().toString().trim(), ans.getText().toString().trim());
                     Toast.makeText(getApplicationContext(), "Added Succesfully", Toast.LENGTH_SHORT).show();
+                    img.setImageResource(R.mipmap.ic_launcher);
                     o1.setText("");
                     o2.setText("");
                     o3.setText("");
                     o4.setText("");
                     ans.setText("");
-                    img.setImageResource(R.mipmap.ic_launcher);
                 }
             }
         });

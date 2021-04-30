@@ -10,45 +10,34 @@
     <EditText
         android:id="@+id/send"
         android:layout_width="250dp"
-        android:layout_above="@id/submit2"
         android:layout_height="wrap_content"
+        android:layout_above="@id/submit"
         android:layout_centerHorizontal="true"
-        android:inputType="textCapWords"
         android:background="#212121"
         android:hint="Name"
+        android:inputType="textCapWords"
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/submit2"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_height="wrap_content"
-        android:onClick="onSubmit2"
-        android:textColor="@color/white"
-        android:background="@android:color/transparent"
-        android:text="Start Quiz With Array" />
-
-    <Button
         android:id="@+id/submit"
-        android:layout_below="@id/submit2"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onSubmit"
-        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:background="@android:color/transparent"
-        android:text="Start Quiz" />
+        android:onClick="onSubmit"
+        android:text="Start Quiz"
+        android:textColor="@color/white" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admin"
-        android:textSize="15dp"
-        android:textColor="@color/white"
-        android:fontFamily="cursive"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/submit"
-        android:onClick="goToAdmin"/>
+        android:layout_centerHorizontal="true"
+        android:fontFamily="cursive"
+        android:onClick="goToAdmin"
+        android:text="Admin"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
 
 </RelativeLayout>

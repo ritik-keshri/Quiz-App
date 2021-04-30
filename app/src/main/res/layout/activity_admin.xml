@@ -9,17 +9,17 @@
 
     <ImageView
         android:id="@+id/img"
-        android:layout_margin="20dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/ins"
-        android:layout_below="@id/img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/img"
         android:layout_centerHorizontal="true"
         android:text="Choose Image" />
 
@@ -27,58 +27,58 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ins"
-        android:orientation="vertical"
         android:layout_margin="10dp"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/opt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#424242"
-            android:inputType="textCapWords"
-            android:hint="Option 1"
             android:layout_margin="10dp"
+            android:background="#424242"
+            android:hint="Option 1"
+            android:inputType="textCapWords"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/opt2"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="#424242"
-            android:inputType="textCapWords"
             android:hint="Option 2"
-            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/opt3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#424242"
-            android:inputType="textCapWords"
             android:layout_margin="10dp"
+            android:background="#424242"
             android:hint="Option 3"
+            android:inputType="textCapWords"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/opt4"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:inputType="textCapWords"
             android:background="#424242"
             android:hint="Option 4"
-            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/ans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textCapWords"
+            android:layout_margin="10dp"
             android:background="#424242"
             android:hint="Answer"
-            android:layout_margin="10dp"
+            android:inputType="textCapWords"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -87,11 +87,11 @@
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
         android:text="Add"
-        android:textSize="20sp"
-        android:layout_alignParentBottom="true"/>
+        android:textSize="20sp" />
 
 
 </RelativeLayout>
