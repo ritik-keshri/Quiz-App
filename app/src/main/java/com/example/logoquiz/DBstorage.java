@@ -1,10 +1,13 @@
 package com.example.logoquiz;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import androidx.annotation.Nullable;
 
@@ -43,6 +46,17 @@ public class DBstorage extends SQLiteOpenHelper {
     public int totalQuestions(){
         SQLiteDatabase db = getReadableDatabase();
         return (int)DatabaseUtils.queryNumEntries(db, "que_table");
+    }
+
+    public Bitmap getImage(int id){
+        SQLiteDatabase d = this.getWritableDatabase();
+        Bitmap bitmap = null;
+        Cursor cursor = d.rawQuery("select col1 from que_table where id=?",new String[]{String.valueOf(id)});
+        if(cursor.moveToNext()){
+            byte[] img = cursor.getBlob(1);
+            bitmap = BitmapFactory.decodeByteArray(img,0, img.length);
+        }
+        return bitmap;
     }
 
 }
